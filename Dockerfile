@@ -4,6 +4,6 @@ MAINTAINER hemanth.sai01@gmail.com
 
 USER root
 
-COPY ["jenkins.war","/usr/local/tomcat/webapps/"]
+COPY ["sample.war","/usr/local/tomcat/webapps/"]
 
 CMD ["catalina.sh","run"]
