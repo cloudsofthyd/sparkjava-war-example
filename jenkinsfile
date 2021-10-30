@@ -1,0 +1,17 @@
+pipeline {
+    
+  agent any
+  tools {maven "maven363" }
+  stages {
+    stage('Cloning Git') {
+      steps {
+        git 'https://github.com/cloudsofthyd/sparkjava-war-example.git'
+      }
+    }
+        stage('Build'){
+            steps{
+                 sh script: 'mvn clean package'
+         }
+       }
+  }
+}
