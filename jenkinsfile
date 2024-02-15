@@ -10,7 +10,7 @@ pipeline {
         stage('checkout scm') {
             steps {
                 // Get some code from a GitHub repository
-                git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+                git 'https://github.com/cloudsofthyd/sparkjava-war-example.git'
 
             }
         }
