@@ -1,0 +1,93 @@
+Cloud computing ,Devops 
+
+Cloud computing:
+
+Servers, 
+
+Infrastrture: Servers,Storage,Networking 
+Platforms : Java , Dotnet , Python - webservers, applicatino servers, db , middleware, devops , messagequeues
+software
+
+SAAS: software,ERPS, applications
+
+We no need to develop, test, Maintain, support the applications/software
+
+
+IAAS
+PAAS
+SAAS
+
+Virtulization
+
+
+hardware - multiple servers
+
+
+Provider - AWS,AZure,GCP
+
+Hypervisor
+
+
+Types of cloud:
+Private: its exclusive for their emp 
+Public : any one can use
+Community : group of 4 - 10 companies may form the cloud
+Hybrid: 2 or more cloud 
+
+
+Cloud Advanatages:
+
+Automation
+Less cost
+Virtual
+Less man power
+High available
+Highly scalable
+Mobility
+Elastic
+Provisioning is very fast
+Heterogenous
+SLA Driven
+
+
+Considerations:
+
+Security
+Privacy
+Migration 
+GOVT constraints
+People required competancy
+
+
+Job Postions:
+
+Architect
+Admin
+Devops
+Developer
+Support
+Securtiy
+SRE
+Dataengineer
+Monitoring
+migration
+
+
+AWS,Azure
+Devops
+Linux
+Scripting: shell/Bash / Powershell, python
+Agile/scrum
+
+
+60 days
+
+15k
+
+Devops: git,github,maven,gradle,nexus,sonarqube,jenkins,docker,kubernetes,
+terraform,ansible.
+
+nagios, promethues,grafana,ELK
+
+
+Aws account
