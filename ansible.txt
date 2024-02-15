@@ -1,0 +1,207 @@
+---
+- name: Example Playbook with Vault
+  hosts: webservers
+  vars_files:
+    - secret_vars.yml  # This file contains your encrypted variables
+
+  tasks:
+    - name: Display Secret Variable
+      debug:
+        msg: "The secret is {{ my_secret }}"
+
+
+
+ansible-vault create secret_vars.yml
+
+
+my_secret: "super_secret_password"
+
+
+ansible-playbook your_playbook.yml --ask-vault-pass
+
+
+
+
+
+
+---
+- name: Example Playbook with Vault Variable
+  hosts: your_host_group
+  vars:
+    secret_variable: !vault |
+                    $ANSIBLE_VAULT;1.1;AES256
+                    66363462343336313263353033623637653730353433326462333065333432303061323462373461
+                    3063623433643166633861623061633061383364323030360a653930383136383265343966316333
+                    38326536333766386436666230613039396330336563333763393035333865633834313934333934
+                    3638396137313762650a306238346534393133323830633862613431393533633734343530633132
+                    3966
+
+  tasks:
+    - name: Display Secret Variable
+      debug:
+        msg: "The secret variable is {{ secret_variable }}"
+
+
+
+ansible-vault encrypt_string 'your_secret_variable' --name 'secret_variable'
+
+
+
+
+
+
+Using no_log for Sensitive Tasks:
+For tasks that handle sensitive information, you can prevent logging that information in the output by using the no_log attribute:
+
+---
+- name: Playbook with Sensitive Task
+  hosts: your_servers
+  tasks:
+    - name: Run a sensitive command
+      shell: echo "This is a sensitive command that contains a password"
+      no_log: true
+The no_log: true attribute prevents the task's output from being displayed in the console or being stored in logs.
+
+
+Ansible Debug module:
+
+The debug module in Ansible is quite handy for troubleshooting, displaying values, or providing information during playbook execution. Here's an example of using the debug module within an Ansible playbook:
+
+
+
+---
+- name: Example Playbook with Debug Module
+  hosts: webservers
+  gather_facts: true
+  vars:
+    my_variable: "myvalue"
+
+  tasks:
+    - name: Display System Information
+      debug:
+        msg: "This is a message to display system information"
+
+    - name: Display Variable Value
+      debug:
+        msg: "The value of my_variable is {{ my_variable }}"
+
+    - name: Display Facts
+      debug:
+        var: ansible_facts
+
+
+
+
+
+export ANSIBLE_LOG_PATH=~/ansible/ansible.log
+
+
+
+
+tomcat
+mysql
+redis
+rabbitmq
+hardening
+
+
+
+
+The debug module is beneficial for displaying information during playbook execution. You can use it to print variables, system details, or any specific information you might need for troubleshooting or verification purposes. Adjust the messages or variables according to your specific use case.
+
+
+---
+- name: My Ansible Playbook
+  hosts: webservers
+  become: yes  # If you need sudo privileges for the tasks in the role
+
+  roles:
+    - my_role
+  
+  hosts: dbservers
+  become: yes
+  
+  roles:
+   - my_role2
+
+
+
+
+ tasks:
+    - name: Copy WAR file to Tomcat webapps directory
+      copy:
+        src: /path/to/your/{{ war_file_name }}
+        dest: "{{ tomcat_home }}/webapps/{{ war_file_name }}"
+        remote_src: yes
+
+
+
+
+
+nginx make it https
+
+server {
+    listen 443 ssl;
+    52.87.185.68 your_domain.com;
+
+    ssl_certificate /etc/nginx/self-signed.crt;
+    ssl_certificate_key /etc/nginx/self-signed.key;
+
+    # Other SSL configurations like protocols, ciphers, etc., can be added here
+
+    # Rest of your Nginx configuration...
+}
+
+
+52.87.185.68
+
+
+
+<Context path="/yourapp" docBase="yourapp" reloadable="true">
+    <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+           allow=".*" />
+</Context>
+
+
+
+
+
+
+<role rolename="manager-gui"/>
+      <role rolename="manager-script"/>
+      <role rolename="manager-jmx"/>
+      <role rolename="manager-status"/>
+      <role rolename="admin-gui"/>
+      <role rolename="admin-script"/>
+      <role rolename="tomcat"/>
+    
+      <user  username="tomcat"  password="tomcat" roles="tomcat"/>
+    
+      <user  username="admin"  password="admin" roles="admin-gui"/>
+    
+      <user  username="adminscript"  password="adminscrip" roles="admin-script"/>
+    
+      <user  username="tomcat"  password="s3cret" roles="manager-gui"/>
+      <user  username="status"  password="status" roles="manager-status"/>
+    
+      <user  username="both"    password="both"   roles="manager-gui,manager-status"/>
+    
+      <user  username="script"  password="script" roles="manager-script"/>
+      <user  username="jmx"     password="jmx"    roles="manager-jmx"/>
+
+
+
+
+
+
+
+
+
+https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.16/bin/apache-tomcat-10.1.16.tar.gz
+
+
+
+
+
+
+
